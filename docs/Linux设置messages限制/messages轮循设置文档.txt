@@ -1,0 +1,21 @@
+﻿message 轮询文档
+message-file为对message进行轮询的配置文件
+message文件位置为/var/log/message
+message-file存放在泛亚厚电脑本机的document下
+
+1.连接工控机
+
+2.cd 到/etc/logrotate.d
+
+3.vim syslog
+
+4.将syslog中的‘/var/log/messages’行前面加一个‘#’注释掉本行
+（要对messages单独设置轮循机制需要先将系统自动对messages轮循的设置注释掉，避免冲突）
+（按下“i”键在linux下进行编辑。编辑好退出时，先按下“esc”，再按下“:”,“wq”，“回车”。）
+
+5.快捷键alt+p进入sftp
+
+6.cd 到/etc/logrotate.d
+
+7.put message-file 
+（将写好的配置文件放在第6步的路径下面。注意：如果重新手写此文件，注意Windows下写的文件不能在linux系统下正常运行的问题。）
